@@ -1,0 +1,99 @@
+https://nnattawat.github.io/flip/
+
+$("#tia").flip({
+  trigger: "click"
+});
+        To Identify
+
+$("#tia").on("flip:done", function(event){
+  var myClass = $(this).attr("class");
+  console.log(myClass);
+})
+
+            To Determine if it is the same
+            
+            var flipped = "";
+$("#tia").flip({
+  trigger: "click"
+});
+
+$("#tia").on("flip:done", function(event){
+  var cardType = $(this).attr("data");
+  if (!flipped){
+    flipped = cardType;
+  } else{
+    if (flipped == cardType){
+      console.log("same class");
+      $("[data="+ cardType + "]")
+ .unbind("click");
+    }
+  }
+  console.log(cardType);
+});
+
+
+
+$("#card").flip({
+  trigger: "click"
+});
+$("#card").on("flip:done",  function(event){
+   var cardType = $(this).attr("data");
+  if (!flipped){
+    flipped = cardType;
+  } else{
+    if (flipped == cardType){
+      console.log("same class");
+      $("[data="+ cardType + "]")
+ .unbind("click");
+    }
+  }
+  console.log(cardType);
+});
+
+<html>
+    <head>
+        <title>Space Memory Game</title>
+        
+        <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+        <script src="https://cdn.rawgit.com/nnattawat/flip/v1.0.18/dist/jquery.flip.min.js"></script>
+
+
+    </head>
+    <body>
+     <div id="header">
+         <h1>space memory game</h1> 
+         </div>
+   <div id="card"
+     data="whatever"> 
+      <div class="front"> 
+          Front content
+      </div> 
+      <div class="back">
+        Back content
+      </div>
+   </div>
+      <br>
+      
+   <div id="tia"
+     data="whatever">
+    <div class="front"> 
+      car
+    </div> 
+    <div class="back">
+      truck
+    </div> 
+  </div>
+    
+     <div id="today"
+     data="yeaterday">
+    <div class="front"> 
+      today
+    </div> 
+    <div class="back">
+      yeaterday
+    </div> 
+  </div>
+    </body>
+</html>
+
+

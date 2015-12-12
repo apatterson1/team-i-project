@@ -1,0 +1,34 @@
+body{
+    background-image: url("https://c2.staticflickr.com/6/5112/7061563019_6b055c761c_b.jpg");
+}
+
+h1 {
+    text-align: center;
+    color: white;
+
+font-weight: bold; 
+}
+
+#scoreContainer{
+    text-align: center;    
+    color: white;
+}
+
+#score{
+    color: white;
+}
+
+.row {
+    margin-bottom: 230px;
+}
+
+.img-responsive {
+    width: 200px;
+}
+
+#winning {
+    display: block;
+    margin: 10 auto;
+    width: 200px;
+}
+    

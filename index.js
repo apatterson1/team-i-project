@@ -4,7 +4,6 @@ $(function() {
     var score = 0;
     
     for(var i = 1; i<=16; i++){
-        var flipped = "";
 
         $("#card-" + i).flip({
           trigger: 'manual'
@@ -13,14 +12,13 @@ $(function() {
         $("#card-" + i).on("click", function(event){
             $(this).flip(true);
             var cardType = $(this).attr("data");
-            console.log("The value of flipped is", flipped);
-            
+
             if (!flipped){
-                console.log("flip is empty");
+                // this means if no card has been flipped
                 flipped = cardType;
+                //this takes the value 
             } else{
                 if (flipped == cardType){
-                    console.log("same card");
                     $("[data="+ cardType + "]").unbind("click");
                     score = score + 125;
                     if(score == 1000) {
@@ -41,7 +39,6 @@ $(function() {
                     }.bind(this), 1000);
                 }
             }
-          console.log(cardType);
         });
     }
 });
